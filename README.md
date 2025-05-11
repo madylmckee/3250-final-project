@@ -95,7 +95,7 @@ Minimal cleaning was required. The main cleaning steps included:
 - Converting mascot names (e.g., "Chiefs") into team location names to allow merging across sources.
 - Merging six datasets using `Season` and `Team` columns into one master DataFrame.
 
-The cleaned dataset was exported as a CSV file [nfl_penalties.csv](project_files/nfl_penalties.csv) for use throughout the analysis.
+The cleaned dataset was exported as a CSV file, [nfl_penalties.csv](project_files/nfl_penalties.csv), for use throughout the analysis.
 
 **Data Dictionary:**
 | Field                     | Type     | Source         | Description                                          |
