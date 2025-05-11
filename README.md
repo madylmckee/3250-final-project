@@ -88,7 +88,7 @@ while year <= 2024:
     year += 1
 ```
     
-!(page_counter.png)
+!(project_files/page_counter.png)
 
 Minimal cleaning was required. The main cleaning steps included:
 - Using mapping dictionaries to standardize team names (resolving relocations and punctuation).
@@ -131,9 +131,9 @@ The cleaned dataset was exported as a CSV file (`nfl_penalties.csv`) for use thr
 I explored whether penalty totals or yards were associated with worse team outcomes such as fewer wins or missing the playoffs. Correlation analysis and a logistic regression model showed that while penalties have a small negative impact on performance, they are **not strong predictors** of team success.
 The following are the correlation coefficients:
 
-!(outcome_corr.png)
-!(offense_corr.png)
-!(defense_corr.png)
+!(project_files/outcome_corr.png)
+!(project_files/offense_corr.png)
+!(project_files/defense_corr.png)
 
 ##### Are there seasonal trends in penalties?
 Using exponential smoothing and line graphs, I analyzed changes in penalty totals and subjective calls over time. No strong seasonal trends were found, but the **2020 season stood out** with unusually low holding calls and a spike in pass interference penalties, likely due to COVID-related officiating adjustments.
@@ -142,12 +142,12 @@ Using exponential smoothing and line graphs, I analyzed changes in penalty total
 I used bar charts and K-Means clustering to compare penalty patterns across teams. Some teams, like the Chiefs, received a surprisingly high number of subjective penalties, **contradicting public perceptions** of bias in their favor. Clustering also revealed that penalty behavior and beneficiary trends differ widely across franchises.
 The following clusters are the results of similar penalty and beneficiary characteristics:
 
-!(penalty_cluster.png)
-!(penalty_stat.png)
-!(benefit_cluster.png)
-!(benefit_stat.png)
+!(project_files/penalty_cluster.png)
+!(project_files/penalty_stat.png)
+!(project_files/benefit_cluster.png)
+!(project_files/benefit_stat.png)
 
-> Detailed analysis in `madymckee_analysis.ipynb` and Final Project Report Sections 3.1-3.3
+> Detailed analysis in [madymckee_analysis.ipynb](project_files/madymckee_analysis.ipynb) and [Final Project Report Sections 3.1-3.3](madymckee_finalprojectreport.pdf)
 
 ### Key Findings
 - Penalties have **a weak but slightly negative correlation** with team performance metrics like wins and playoff appearances.
