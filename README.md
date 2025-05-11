@@ -8,6 +8,7 @@
 4. Analysis Questions
 5. Key Findings
 6. Future Work
+7. Project Files
 
 ### Project Overview
 This project analyzes NFL penalty data to explore whether penalties influence team performance, vary across seasons, or disproportionately affect certain teams. Prompted by growing public concerns over fairness and the perception that the NFL may be "rigged" in favor of specific teams, this analysis uses data from the 2015–2024 seasons to examine patterns in how penalties are called and who benefits from them.
@@ -162,4 +163,28 @@ The following clusters are the results of similar penalty and beneficiary charac
 - Incorporate **play-by-play data** to examine the timing and impact of penalties on drives and scoring.
 - Analyze **referee-specific trends** to see if certain crews are more prone to calling specific penalties.
 - Explore **sentiment analysis** or public reaction data to compare perceptions of bias to the actual data.
+
+
+### Project Files
+All project files are located in the [`project_files`](project_files) folder:
+
+| File Name | Description |
+|-----------|-------------|
+| [`madymckee_scrapingandcleaning.ipynb`](project_files/madymckee_scrapingandcleaning.ipynb) | Jupyter Notebook for web scraping and data cleaning from NFLPenalties.com, FootballDB.com, and NFL.com. |
+| [`madymckee_analysis.ipynb`](project_files/madymckee_analysis.ipynb) | Main analysis notebook that explores correlations, trends, clustering, and modeling based on penalty data. |
+| [`nfl_penalties.csv`](project_files/nfl_penalties.csv) | Final cleaned and merged dataset containing team-level penalty, performance, and outcome metrics from 2015 to 2024. |
+| [`madymckee_finalprojectreport.pdf`](project_files/madymckee_finalprojectreport.pdf) | Written report summarizing the project’s motivation, methodology, findings, and conclusions. |
+
+
+
+
+
+
+
+
+
+
+
+
+
 - Integrate **sports betting outcomes or line movements** to study the financial implications of penalty patterns.
