@@ -21,10 +21,13 @@ By combining penalty data with team statistics and outcomes, the project aims to
 
 
 ### Data Sources
-| Source Name          | Website Link |
+| Data          | Source         |
 |----------------------|--------------|
-| NFL Penalty Data     | [NFLPenalties.com](https://www.nflpenalties.com/) |
-| Team Statistics      | [FootballDB.com](https://www.footballdb.com/) |
+| Overall Penalty Data     | [NFLPenalties.com](https://www.nflpenalties.com/) |
+| Offensive Holding    | [NFLPenalties.com](https://www.nflpenalties.com/penalty/offensive-holding?year=2024) |
+| Defensive Pass Interference    | [NFLPenalties.com](https://www.nflpenalties.com/penalty/defensive-pass-interference?year=2024) |
+| Offensive Statistics    | [FootballDB.com](https://www.footballdb.com/statistics/nfl/team-stats/offense-totals/2024) |
+| Defensive Statistics    | [FootballDB.com](https://www.footballdb.com/statistics/nfl/team-stats/defense-totals/2024) |
 | Standings and Outcomes | [NFL.com Standings](https://www.nfl.com/standings/) |
 
 
@@ -33,11 +36,8 @@ Data for this project was collected using Python and Selenium to automate the sc
 
 - **Penalty data** (penalty counts, yards, offensive holding, and pass interference)
 - **Offensive and defensive team statistics** (points scored, yards allowed)
-- **Season outcomes** (wins, losses, playoff appearances)
+- **Season outcomes** (wins, losses, playoff qualification)
 
-Each dataset was scraped season-by-season using a `while` loop that dynamically generated URLs and verified the success of each request.
-
-Here is an example of the scraping script used for NFL.com:
 Each dataset was scraped season-by-season using a `while` loop that dynamically generated URLs and verified the success of each request.
 
 Here is an example of the scraping script used for NFL.com:
@@ -92,10 +92,10 @@ while year <= 2024:
 
 Minimal cleaning was required. The main cleaning steps included:
 - Using mapping dictionaries to standardize team names (resolving relocations and punctuation).
-- Converting mascot names (e.g., "Chiefs") into full team names to allow merging across sources.
-- Merging six datasets using `Season` and `Team` columns into one master DataFrame used for analysis.
+- Converting mascot names (e.g., "Chiefs") into team location names to allow merging across sources.
+- Merging six datasets using `Season` and `Team` columns into one master DataFrame.
 
-The cleaned dataset was exported as a CSV file (`nfl_penalties.csv`) for use throughout the analysis.
+The cleaned dataset was exported as a CSV file [nfl_penalties.csv](project_files/nfl_penalties.csv) for use throughout the analysis.
 
 **Data Dictionary:**
 | Field                     | Type     | Source         | Description                                          |
@@ -126,8 +126,9 @@ The cleaned dataset was exported as a CSV file (`nfl_penalties.csv`) for use thr
 | Passing Yards Allowed    | Numeric  | Football DB    | Total opponent passing yards in the season          |
 | Total Yards Allowed      | Numeric  | Football DB    | Total opponent yards in the season                  |
 
+
 ### Analysis Questions
-##### How do penalties affect team performance?
+##### 1. How do penalties affect team performance?
 I explored whether penalty totals or yards were associated with worse team outcomes such as fewer wins or missing the playoffs. Correlation analysis and a logistic regression model showed that while penalties have a small negative impact on performance, they are **not strong predictors** of team success.
 The following are the correlation coefficients:
 
@@ -135,10 +136,10 @@ The following are the correlation coefficients:
 ![Offensive Stats Correlations](project_files/offense_corr.png)
 ![Defensive Stats Correlations](project_files/defense_corr.png)
 
-##### Are there seasonal trends in penalties?
+##### 2. Are there seasonal trends in penalties?
 Using exponential smoothing and line graphs, I analyzed changes in penalty totals and subjective calls over time. No strong seasonal trends were found, but the **2020 season stood out** with unusually low holding calls and a spike in pass interference penalties, likely due to COVID-related officiating adjustments.
 
-##### Are certain teams more or less likely to receive penalties?
+##### 3. Are certain teams more or less likely to receive penalties?
 I used bar charts and K-Means clustering to compare penalty patterns across teams. Some teams, like the Chiefs, received a surprisingly high number of subjective penalties, **contradicting public perceptions** of bias in their favor. Clustering also revealed that penalty behavior and beneficiary trends differ widely across franchises.
 The following clusters are the results of similar penalty and beneficiary characteristics:
 
@@ -149,11 +150,13 @@ The following clusters are the results of similar penalty and beneficiary charac
 
 > Detailed analysis in [madymckee_analysis.ipynb](project_files/madymckee_analysis.ipynb) and [Final Project Report Sections 3.1-3.3](madymckee_finalprojectreport.pdf)
 
+
 ### Key Findings
 - Penalties have **a weak but slightly negative correlation** with team performance metrics like wins and playoff appearances.
 - **Subjective penalties** (e.g., holding and pass interference) do not appear to be consistently trending up or down over time, but 2020 showed significant anomalies due to COVID-era officiating changes.
 - Some teams are **penalized or benefit significantly more than others**, and clustering revealed distinct groupings based on penalty behavior.
-- Despite frequent claims of favoritism, the **Kansas City Chiefs received the most subjective penalties** over the past 10 seasons—challenging the public narrative of officiating bias in their favor.
+- Despite frequent claims of favoritism, the **Kansas City Chiefs received the most subjective penalties** over the past 10 seasons, challenging the public narrative of officiating bias in their favor.
+
 
 ### Future Work
 - Incorporate **play-by-play data** to examine the timing and impact of penalties on drives and scoring.
