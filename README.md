@@ -33,7 +33,7 @@ Data for this project was collected using Python and Selenium to automate the sc
 
 - **Penalty data** (penalty counts, yards, offensive holding, and pass interference)
 - **Offensive and defensive team statistics** (points scored, yards allowed)
-- - **Season outcomes** (wins, losses, playoff appearances)
+- **Season outcomes** (wins, losses, playoff appearances)
 
 Each dataset was scraped season-by-season using a `while` loop that dynamically generated URLs and verified the success of each request.
 
@@ -88,7 +88,7 @@ while year <= 2024:
     year += 1
 ```
     
-!(project_files/page_counter.png)
+![Page Counter](project_files/page_counter.png)
 
 Minimal cleaning was required. The main cleaning steps included:
 - Using mapping dictionaries to standardize team names (resolving relocations and punctuation).
@@ -131,9 +131,9 @@ The cleaned dataset was exported as a CSV file (`nfl_penalties.csv`) for use thr
 I explored whether penalty totals or yards were associated with worse team outcomes such as fewer wins or missing the playoffs. Correlation analysis and a logistic regression model showed that while penalties have a small negative impact on performance, they are **not strong predictors** of team success.
 The following are the correlation coefficients:
 
-!(project_files/outcome_corr.png)
-!(project_files/offense_corr.png)
-!(project_files/defense_corr.png)
+![Outcome Metrics Correlations](project_files/outcome_corr.png)
+![Offensive Stats Correlations](project_files/offense_corr.png)
+![Defensive Stats Correlations](project_files/defense_corr.png)
 
 ##### Are there seasonal trends in penalties?
 Using exponential smoothing and line graphs, I analyzed changes in penalty totals and subjective calls over time. No strong seasonal trends were found, but the **2020 season stood out** with unusually low holding calls and a spike in pass interference penalties, likely due to COVID-related officiating adjustments.
@@ -142,10 +142,10 @@ Using exponential smoothing and line graphs, I analyzed changes in penalty total
 I used bar charts and K-Means clustering to compare penalty patterns across teams. Some teams, like the Chiefs, received a surprisingly high number of subjective penalties, **contradicting public perceptions** of bias in their favor. Clustering also revealed that penalty behavior and beneficiary trends differ widely across franchises.
 The following clusters are the results of similar penalty and beneficiary characteristics:
 
-!(project_files/penalty_cluster.png)
-!(project_files/penalty_stat.png)
-!(project_files/benefit_cluster.png)
-!(project_files/benefit_stat.png)
+![Penalty Clusters](project_files/penalty_cluster.png)
+![Stats by Cluster](project_files/penalty_stat.png)
+![Beneficiary Clusters](project_files/benefit_cluster.png)
+![Stats by Cluster](project_files/benefit_stat.png)
 
 > Detailed analysis in [madymckee_analysis.ipynb](project_files/madymckee_analysis.ipynb) and [Final Project Report Sections 3.1-3.3](madymckee_finalprojectreport.pdf)
 
