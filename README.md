@@ -96,7 +96,7 @@ Minimal cleaning was required. The main cleaning steps included:
 - Converting mascot names (e.g., "Chiefs") into team location names to allow merging across sources.
 - Merging six datasets using `Season` and `Team` columns into one master DataFrame.
 
-The cleaned dataset was exported as a CSV file, [nfl_penalties.csv](project_files/nfl_penalties.csv), for use throughout the analysis.
+The cleaned dataset was exported as a CSV file, [`nfl_penalties.csv`](project_files/nfl_penalties.csv), for use throughout the analysis.
 
 **Data Dictionary:**
 | Field                     | Type     | Source         | Description                                          |
@@ -149,7 +149,7 @@ The following clusters are the results of similar penalty and beneficiary charac
 ![Beneficiary Clusters](project_files/benefit_cluster.png)
 ![Stats by Cluster](project_files/benefit_stat.png)
 
-> Detailed analysis in [madymckee_analysis.ipynb](project_files/madymckee_analysis.ipynb) and [Final Project Report Sections 3.1-3.3](madymckee_finalprojectreport.pdf)
+> Detailed analysis in [`madymckee_analysis.ipynb`](project_files/madymckee_analysis.ipynb) and [Final Project Report Sections 3.1-3.3](madymckee_finalprojectreport.pdf)
 
 
 ### Key Findings
@@ -163,6 +163,7 @@ The following clusters are the results of similar penalty and beneficiary charac
 - Incorporate **play-by-play data** to examine the timing and impact of penalties on drives and scoring.
 - Analyze **referee-specific trends** to see if certain crews are more prone to calling specific penalties.
 - Explore **sentiment analysis** or public reaction data to compare perceptions of bias to the actual data.
+- Integrate **sports betting outcomes or line movements** to study the financial implications of penalty patterns.
 
 
 ### Project Files
@@ -174,17 +175,3 @@ All project files are located in the [`project_files`](project_files) folder:
 | [`madymckee_analysis.ipynb`](project_files/madymckee_analysis.ipynb) | Main analysis notebook that explores correlations, trends, clustering, and modeling based on penalty data. |
 | [`nfl_penalties.csv`](project_files/nfl_penalties.csv) | Final cleaned and merged dataset containing team-level penalty, performance, and outcome metrics from 2015 to 2024. |
 | [`madymckee_finalprojectreport.pdf`](project_files/madymckee_finalprojectreport.pdf) | Written report summarizing the project’s motivation, methodology, findings, and conclusions. |
-
-
-
-
-
-
-
-
-
-
-
-
-
-- Integrate **sports betting outcomes or line movements** to study the financial implications of penalty patterns.
